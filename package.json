@@ -1,0 +1,16 @@
+{
+  "name": "reeq",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:louismerlin/reeq.git",
+  "author": "Louis Merlin <louis_merlin1@yahoo.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "standard": "^12.0.1"
+  },
+  "scripts": {
+    "test": "parcel test.html",
+    "lint": "standard --fix index.js test.js"
+  }
+}
