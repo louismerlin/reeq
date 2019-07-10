@@ -2,8 +2,12 @@
   "name": "reeq",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:louismerlin/reeq.git",
-  "author": "Louis Merlin <louis_merlin1@yahoo.fr>",
+  "repository": "https://github.com/louismerlin/reeq.git",
+  "author": {
+    "name": "Louis Merlin",
+    "email": "louis_merlin1@yahoo.fr",
+    "url": "https://louismerl.in"
+  },
   "license": "MIT",
   "devDependencies": {
     "parcel-bundler": "^1.12.3",

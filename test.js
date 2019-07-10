@@ -9,7 +9,7 @@ reeq('https://jsonplaceholder.typicode.com/posts/1').then(response => {
   }
 })
 
-reeq('https://jsonplaceholder.typicode.com/posts', { method: 'POST', data: JSON.stringify({ title: 'Reeq rocks' }), json: true }).then(response => {
+reeq('https://jsonplaceholder.typicode.com/posts', { method: 'POST', data: { title: 'Reeq rocks' } }).then(response => {
   const { title } = JSON.parse(response)
   if (title === 'Reeq rocks') {
     console.log('POST success')
