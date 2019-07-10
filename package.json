@@ -1,6 +1,6 @@
 {
   "name": "reeq",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "source": "reeq.js",
   "main": "dist/reeq.js",
   "module": "dist/reeq.mjs",
