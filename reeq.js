@@ -1,5 +1,3 @@
-const XMLHttpRequest = global.XMLHttpRequest
-
 function reeq (url, options) {
   return new Promise(function (resolve, reject) {
     const method = (options && options.method) || 'GET'
@@ -42,4 +40,4 @@ function reeq (url, options) {
   })
 }
 
-module.exports = reeq
+export default reeq

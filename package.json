@@ -1,7 +1,10 @@
 {
   "name": "reeq",
   "version": "1.1.0",
-  "main": "index.js",
+  "source": "reeq.js",
+  "main": "dist/reeq.js",
+  "module": "dist/reeq.mjs",
+  "unpkg": "dist/reeq.umd.js",
   "repository": "https://github.com/louismerlin/reeq.git",
   "author": {
     "name": "Louis Merlin",
@@ -10,11 +13,19 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "microbundle": "^0.11.0",
     "parcel-bundler": "^1.12.3",
     "standard": "^12.0.1"
   },
   "scripts": {
-    "test": "parcel test.html",
-    "lint": "standard --fix index.js test.js"
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "lint": "standard --fix reeq.js test.js"
+  },
+  "standard": {
+    "globals": [
+      "XMLHttpRequest",
+      "reeq"
+    ]
   }
 }

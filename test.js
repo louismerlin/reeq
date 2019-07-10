@@ -1,5 +1,3 @@
-import reeq from './index'
-
 reeq('https://jsonplaceholder.typicode.com/posts/1').then(response => {
   const { title } = JSON.parse(response)
   if (title === 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit') {
