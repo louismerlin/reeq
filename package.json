@@ -54,7 +54,7 @@
   "scripts": {
     "build": "microbundle --no-sourcemap",
     "dev": "microbundle watch --no-sourcemap",
-    "pretest": "standard reeq.js reeq.test.js",
+    "pretest": "yarn lint && yarn build",
     "test": "jest",
     "lint": "standard --fix reeq.js reeq.test.js",
     "predeploy": "yarn test && yarn build"
