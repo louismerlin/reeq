@@ -55,7 +55,7 @@
     "build": "microbundle --no-sourcemap",
     "dev": "microbundle watch --no-sourcemap",
     "pretest": "yarn lint && yarn build",
-    "test": "jest",
+    "test": "jest --coverage",
     "lint": "standard --fix reeq.js reeq.test.js",
     "predeploy": "yarn test && yarn build"
   },
@@ -65,9 +65,5 @@
       "reeq",
       "FormData"
     ]
-  },
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
   }
 }
