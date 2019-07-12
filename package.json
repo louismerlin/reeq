@@ -65,5 +65,9 @@
       "reeq",
       "FormData"
     ]
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }

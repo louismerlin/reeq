@@ -2,7 +2,7 @@
 
 > Ultra simple, ultra light, dependency-free and tree-shakeable HTTP client for the browser, made with JSON in mind
 
-[![version](https://img.shields.io/npm/v/reeq.svg)](https://www.npmjs.com/package/reeq) [![size](https://img.shields.io/bundlephobia/minzip/reeq.svg)](https://bundlephobia.com/result?p=reeq)
+[![version](https://img.shields.io/npm/v/reeq.svg)](https://www.npmjs.com/package/reeq) [![build](https://img.shields.io/travis/louismerlin/reeq.svg)](https://travis-ci.org/louismerlin/reeq) [![]()]() [![size](https://img.shields.io/bundlephobia/minzip/reeq.svg)](https://bundlephobia.com/result?p=reeq)
 
 Reeq targets [most browsers](https://caniuse.com/#feat=promises).
 
