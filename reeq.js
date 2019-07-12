@@ -24,7 +24,12 @@ function reeq (url, options) {
 
     request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
-        resolve(request.responseText)
+        try {
+          const response = JSON.parse(request.responseText)
+          resolve(response)
+        } catch (_) {
+          resolve(request.responseText)
+        }
       } else {
         reject(new Error('Server returned:', XMLHttpRequest.statusText))
       }

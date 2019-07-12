@@ -50,8 +50,8 @@ afterAll(() => {
 */
 test('makes a simple GET request', async () => {
   const response = await reeq(URL)
-  const { title } = JSON.parse(response)
-  expect(title).toBe('Hello World')
+  // const { title } = JSON.parse(response)
+  expect(response.title).toBe('Hello World')
 })
 
 /*
@@ -60,6 +60,6 @@ test('makes a simple GET request', async () => {
 test('makes a simple POST request with JSON body', async () => {
   const title = 'reeq rocks'
   const response = await reeq(URL, { method: 'POST', body: { title } })
-  const parsedResponse = JSON.parse(response)
-  expect(parsedResponse.title).toBe(title + '!')
+  // const parsedResponse = JSON.parse(response)
+  expect(response.title).toBe(title + '!')
 })
