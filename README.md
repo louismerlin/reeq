@@ -10,6 +10,8 @@ Use reeq if:
  - You do not care about anything else other than the response (no status codes etc)
  - You want as few bytes as possible
 
+Reeq has 100% code coverage !
+
 #### Please feel free to open an issue and/or contribute !
 
 ## Install
@@ -65,3 +67,5 @@ Where `url` is the url of the ressource.
 The header `content-type` will be automatically set based on the body, for `FormData` and `object` (JSON) bodies. You should use this option if you want to override the `content-type`.
 
 `json` is a special type value that will set the `content-type` to `application/json`.
+
+`form-data` is a special type value that will set the `content-type` to `multipart/form-data`.
