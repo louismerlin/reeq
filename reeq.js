@@ -1,3 +1,7 @@
+function createError (message, request) {
+  return new Error(message + ' ' + request.status + ' ' + request.responseText)
+}
+
 function reeq (url, options) {
   return new Promise(function (resolve, reject) {
     const method = (options && options.method) || 'GET'
@@ -13,8 +17,10 @@ function reeq (url, options) {
 
     if (body instanceof FormData || type === 'form-data') {
       request.setRequestHeader('Content-Type', 'multipart/form-data')
-    } else if (typeof body === 'object' || type === 'json') {
-      body = JSON.stringify(body)
+    } else if ((body !== null && typeof body === 'object') || type === 'json') {
+      if (typeof body === 'object') {
+        body = JSON.stringify(body)
+      }
       request.setRequestHeader('Content-Type', 'application/json')
     } else if (!type) {
       request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
@@ -31,12 +37,12 @@ function reeq (url, options) {
           resolve(request.responseText)
         }
       } else {
-        reject(new Error('Server returned:', XMLHttpRequest.statusText))
+        reject(createError('Server returned:', request))
       }
     }
 
     request.onerror = function () {
-      reject(new Error('Connection error,', XMLHttpRequest.statusText))
+      reject(createError('Connection error:', request))
     }
 
     request.send(body)
