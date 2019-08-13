@@ -7,6 +7,7 @@ function reeq (url, options) {
     const method = (options && options.method) || 'GET'
     let body = (options && options.body) || null
     const type = (options && options.type) || null
+    const headers = (options && options.headers) || {}
 
     if (!url) {
       reject(new Error('No url was given'))
@@ -27,6 +28,11 @@ function reeq (url, options) {
     } else {
       request.setRequestHeader('Content-Type', type)
     }
+
+    Object.keys(headers).forEach(key => {
+      const value = headers[key]
+      request.setRequestHeader(key, value)
+    })
 
     request.onload = function () {
       if (request.status >= 200 && request.status < 400) {

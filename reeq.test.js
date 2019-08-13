@@ -33,6 +33,14 @@ app.get('/not-json', async (_, res) => {
   res.send('this is not json!')
 })
 
+app.get('/special-header', async (req, res) => {
+  if (req.accepts('reeq/special-type')) {
+    return res.send('There was a special header')
+  } else {
+    return res.status(400).send('Accept should have reeq/special-type')
+  }
+})
+
 app.post('/form-data', async (req, res) => {
   if (req.is('multipart/form-data')) {
     return res.send('Recevied form-data!')
@@ -100,6 +108,14 @@ test('makes a simple POST request with JSON body', async () => {
 test('makes a simple GET request that does not return JSON', async () => {
   const response = await reeq(`${URL}/not-json`)
   expect(response).toBe('this is not json!')
+})
+
+/*
+  Test out a GET request with a special header
+*/
+test('makes a GET request with a special header', async () => {
+  const response = await reeq(`${URL}/special-header`, { headers: { 'Accept': 'reeq/special-type' } })
+  expect(response).toBe('There was a special header')
 })
 
 /*

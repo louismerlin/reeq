@@ -1,6 +1,6 @@
 {
   "name": "reeq",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "source": "reeq.js",
   "main": "dist/reeq.js",
   "module": "dist/reeq.mjs",
@@ -56,7 +56,7 @@
     "pretest": "yarn lint && yarn build",
     "test": "jest --coverage",
     "lint": "standard --fix reeq.js reeq.test.js",
-    "predeploy": "yarn test && yarn build"
+    "prepublish": "yarn test && yarn build"
   },
   "standard": {
     "globals": [
