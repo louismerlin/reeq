@@ -63,6 +63,7 @@ Where `url` is the url of the ressource.
 - method (string, default `GET`): the [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
 - body (string or object, default `null`): the request body.
 - type (string, intelligent default): the header content-type.
+- headers (object): additional headers to add to the request
 
 The header `content-type` will be automatically set based on the body, for `FormData` and `object` (JSON) bodies. You should use this option if you want to override the `content-type`.
 
